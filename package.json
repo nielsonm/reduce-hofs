@@ -4,6 +4,7 @@
   "description": "Higher order functions recreated using .reduce",
   "main": "reduce-map.js",
   "dependencies": {
+    "@types/underscore": "^1.8.9",
     "babel-loader": "^8.0.5",
     "underscore": "^1.9.1"
   },
