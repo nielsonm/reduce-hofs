@@ -1,4 +1,4 @@
-# JS higher order fucntions implemented in reduce
+# JS higher order functions implemented in reduce
 
 Compiled using Babel & TypeScript
 
