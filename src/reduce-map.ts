@@ -1,4 +1,4 @@
-const mapText = 'Testing out map, using reduce';
+const mapText = "Testing out map, using reduce";
 
 console.log(mapText);
 
@@ -11,15 +11,15 @@ const mapArray = testArray.map((num:number) => {
     return num * multiplier;
 });
 
-console.log(mapArray, 'This is using map.');
+console.log(mapArray, "This is using map.");
 
 const reduceMapArray = testArray.reduce((sum: number[], cur: number) => {
    sum.push(cur * multiplier);
    return sum;
 }, []);
 
-console.log(reduceMapArray, 'This is using reduce!');
+console.log(reduceMapArray, "This is using reduce!");
 
 if (reduceMapArray.values == mapArray.values){
-    console.log('Yay, they should match.')
+    console.log("Yay, they should match.")
 }
