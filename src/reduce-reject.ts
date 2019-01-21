@@ -5,14 +5,14 @@ const testRejectElement = 13
 
 console.log("Let's remove ", testRejectElement, " from ", testRejectArray)
 
-const arrayReject = _.reject(testRejectArray, function(num:number){
+const arrayReject = _.reject(testRejectArray, (num:number) => {
     return num == testRejectElement
 });
 
 console.log(arrayReject, `Array.reject now missing ${testRejectElement}`)
 
-const reduceArrayReject = testRejectArray.reduce(function(rejectedArray: number[], cur: number){
-    if (cur !== testRejectElement){
+const reduceArrayReject = testRejectArray.reduce((rejectedArray: number[], cur: number) => {
+    if(cur !== testRejectElement){
         rejectedArray.push(cur)
     }
     return rejectedArray

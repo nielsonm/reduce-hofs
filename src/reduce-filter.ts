@@ -6,7 +6,7 @@ console.log("Let's find", testFilterElement, " in ", testFilterArray )
 const arrayFilter = testFilterArray.filter(filterItem => filterItem == testFilterElement);
 console.log(arrayFilter, "Filtered out")
 
-const reduceArrayFilter = testFilterArray.reduce( function(filtered: number[], cur: number) {
+const reduceArrayFilter = testFilterArray.reduce((filtered: number[], cur: number) => {
     if (cur == testFilterElement) {
         filtered.push(cur)
     }

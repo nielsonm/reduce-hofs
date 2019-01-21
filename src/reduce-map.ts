@@ -7,13 +7,13 @@ const multiplier = 2;
 
 console.log("Let's multiply", testArray  , "by" , multiplier)
 
-const mapArray = testArray.map(function(num:number) {
+const mapArray = testArray.map((num:number) => {
     return num * multiplier;
 });
 
 console.log(mapArray, 'This is using map.');
 
-const reduceMapArray = testArray.reduce( function(sum: number[], cur: number) {
+const reduceMapArray = testArray.reduce((sum: number[], cur: number) => {
    sum.push(cur * multiplier);
    return sum;
 }, []);
