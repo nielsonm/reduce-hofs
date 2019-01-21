@@ -8,6 +8,7 @@ console.log(arrayFilter, "Filtered out")
 
 const reduceArrayFilter = testFilterArray.reduce((filtered: number[], cur: number) => {
     if (cur == testFilterElement) {
+        // Filtered array output.
         filtered.push(cur)
     }
     return filtered

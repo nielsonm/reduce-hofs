@@ -23,7 +23,8 @@
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "lint": "eslint lib/*.js"
+    "lint": "eslint lib/*.js",
+    "execute": "node lib/reduce-map.js && node lib/reduce-filter.js && node lib/reduce-reject.js"
   },
   "author": "",
   "license": "ISC"
