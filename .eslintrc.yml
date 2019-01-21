@@ -18,3 +18,5 @@ rules:
     - always
   no-console:
     - off
+  no-undef:
+    - off
