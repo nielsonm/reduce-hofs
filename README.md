@@ -1,4 +1,5 @@
 # JS higher order functions implemented in reduce
+[![CircleCI](https://circleci.com/gh/nielsonm/reduce-hofs.svg?style=svg)](https://circleci.com/gh/nielsonm/reduce-hofs)
 
 Compiled using Babel & TypeScript
 
