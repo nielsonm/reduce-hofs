@@ -79,5 +79,4 @@ workflows:
             - checkout
       - build:
           requires:
-            - test
             - lint
