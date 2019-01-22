@@ -4,12 +4,30 @@ defaults: &defaults
 version: 2
 jobs:
   checkout:
+    <<: *defaults
+
     steps:
       - checkout
       - run:
         name: Checkout dependencies
         command: npm install
+      - persist_to_workspace:
+        root: ~/repo
+
+  build:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build TypeScript code
+          command: npm build
+
   lint:
+    <<: *defaults
+
     steps:
       - attach_workspace:
       - run:
@@ -24,3 +42,6 @@ workflows:
       - lint:
         requires:
             - checkout
+      - build:
+          requires:
+            - lint
