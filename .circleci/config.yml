@@ -50,6 +50,9 @@ jobs:
           at: ~/repo
 
       - run:
+          name: Install Dependencies
+          command: npm install
+
           name: Lint TypeScript code
           command: npm run-script lint
 
