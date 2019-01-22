@@ -1,8 +1,81 @@
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:8.0
+
+whitelist: &whitelist
+  paths:
+    - .npmignore
+    - coverage/*
+    - dist/*
+    - node_modules/*
+    - src/*
+    - test/*
+    - CODE_OF_CONDUCT.md
+    - LICENSE
+    - package.json
+    - README.md
+    - tsconfig.json
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/ruby:2.4.1
+  checkout:
+    <<: *defaults
+
     steps:
       - checkout
-      - run: echo "A first hello"
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run:
+          name: Install Dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          <<: *whitelist
+
+  lint:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Lint TypeScript code
+          command: echo "Run linting here?"
+
+  build:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build TypeScript code
+          command: npm build
+
+      - persist_to_workspace:
+          root: ~/repo
+          <<: *whitelist
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - checkout
+      - lint:
+          requires:
+            - checkout
+      - build:
+          requires:
+            - lint
