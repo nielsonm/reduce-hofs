@@ -48,13 +48,9 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-
-      - run:
-          name: Install Dependencies
-          command: npm install
       - run:
           name: Lint TypeScript code
-          command: npm run-script lint
+          command: ./node_modules/.bin/eslint ~/lib/*.js
 
   build:
     <<: *defaults
