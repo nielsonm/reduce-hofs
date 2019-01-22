@@ -2,7 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/node:8.0
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run:
+        name: Checkout dependencies
+        command: npm install
+  lint:
+      steps:
+        - attach_workspace:
+        - run:
+            name: Lint TypeScript code
+            command: npm run-script lint
