@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Install Dependencies
-          command: npm install & npm install -g eslint
+          command: npm install && npm install -g eslint
 
       - save_cache:
           paths:
