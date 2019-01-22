@@ -9,8 +9,10 @@ jobs:
         name: Checkout dependencies
         command: npm install
   lint:
-      steps:
-        - attach_workspace:
-        - run:
-            name: Lint TypeScript code
-            command: npm run-script lint
+    docker:
+        - image: circleci/node:8.0
+    steps:
+      - attach_workspace:
+      - run:
+          name: Lint TypeScript code
+          command: npm run-script lint
