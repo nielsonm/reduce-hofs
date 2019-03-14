@@ -1,4 +1,5 @@
 import * as _ from 'underscore';
+import afterFunctionBreak, { } from './formatting';
 
 const testRejectArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
 const testRejectElement = 13
@@ -19,3 +20,4 @@ const reduceArrayReject = testRejectArray.reduce((rejectedArray: number[], cur: 
 }, []);
 
 console.log(reduceArrayReject, `Reduce reject implementation now missing ${testRejectElement}`)
+console.log(afterFunctionBreak)
