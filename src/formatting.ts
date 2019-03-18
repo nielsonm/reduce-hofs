@@ -1,2 +1,2 @@
-const afterFunctionBreak:string = "\n\n"
+const afterFunctionBreak:string = "\n"
 export default afterFunctionBreak
