@@ -24,7 +24,7 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "lint": "./node_modules/.bin/eslint lib/*.js",
-    "execute": "node lib/reduce-map.js; node lib/reduce-filter.js; node lib/reduce-reject.js"
+    "execute": "node lib/reduce-map.js; node lib/reduce-filter.js; node lib/reduce-reject.js; node lib/const-array.js"
   },
   "author": "",
   "license": "ISC"
