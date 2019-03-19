@@ -27,5 +27,5 @@
     "execute": "node lib/reduce-map.js; node lib/reduce-filter.js; node lib/reduce-reject.js; node lib/const-array.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "GPLv3"
 }
